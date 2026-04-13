@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liam Noyce — Professional Footballer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-elevated: #141414;
+    --bg-card: #1a1a1a;
+    --text: #f0ece4;
+    --text-muted: #8a8578;
+    --accent: #c8a44e;
+    --accent-glow: rgba(200, 164, 78, 0.15);
+    --accent-bright: #e0be6a;
+    --border: rgba(200, 164, 78, 0.12);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Instrument Sans', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg);
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.5rem 3rem; display: flex; justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+    transition: background 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.15em; color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; padding: 2rem; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, var(--accent-glow), transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(200,164,78,0.05), transparent 50%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, var(--bg), transparent); pointer-events: none; }
+  .hero-number { font-family: var(--font-display); font-size: clamp(8rem, 25vw, 20rem); color: rgba(200, 164, 78, 0.04); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; line-height: 1; }
+  .hero-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(4rem, 12vw, 10rem); letter-spacing: 0.04em; line-height: 0.9; color: var(--text); position: relative; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards; }
+  .hero h1 span { display: block; background: linear-gradient(135deg, var(--accent), var(--accent-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-tagline { font-size: 1.1rem; color: var(--text-muted); margin-top: 1.5rem; font-weight: 400; max-width: 500px; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards; }
+  .hero-cta-row { display: flex; gap: 1rem; margin-top: 2.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2rem; background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2rem; background: transparent; color: var(--text); text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s; }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 0.8s ease 1.2s forwards; }
+  .scroll-indicator span { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+  .scroll-line { width: 1px; height: 40px; background: var(--accent); animation: scrollPulse 2s ease infinite; }
+
+  /* STATS BAR */
+  .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-elevated); }
+  .stat-item { padding: 2.5rem 2rem; text-align: center; border-right: 1px solid var(--border); transition: background 0.3s; }
+  .stat-item:last-child { border-right: none; }
+  .stat-item:hover { background: var(--accent-glow); }
+  .stat-number { font-family: var(--font-display); font-size: 3rem; color: var(--accent); line-height: 1; }
+  .stat-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.5rem; }
+
+  /* SECTIONS */
+  section { padding: 6rem 3rem; }
+  .section-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .section-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 0.03em; margin-bottom: 2rem; }
+
+  /* ABOUT */
+  .about { max-width: 900px; margin: 0 auto; }
+  .about-text { font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); }
+  .about-text strong { color: var(--text); font-weight: 600; }
+  .about-positions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+  .position-tag { padding: 0.5rem 1.2rem; background: var(--accent-glow); border: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+
+  /* EXPERIENCE TIMELINE */
+  .experience { max-width: 1000px; margin: 0 auto; }
+  .timeline { position: relative; padding-left: 3rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--accent), var(--border), transparent); }
+  .timeline-item { position: relative; padding-bottom: 3rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -3rem; top: 0.5rem; width: 9px; height: 9px; background: var(--accent); transform: rotate(45deg); }
+  .timeline-date { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .timeline-title { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+  .timeline-location { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+  .timeline-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; max-width: 600px; }
+  .flag { display: inline-block; font-size: 1rem; line-height: 1; }
+
+  /* VIDEO */
+  .video-section { max-width: 1000px; margin: 0 auto; }
+  .video-container { position: relative; width: 100%; padding-top: 56.25%; background: var(--bg-card); border: 1px solid var(--border); overflow: hidden; }
+  .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.8rem; text-align: center; }
+
+  /* CTA */
+  .cta-section { text-align: center; padding: 8rem 3rem; position: relative; }
+  .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, var(--accent-glow), transparent 70%); pointer-events: none; }
+  .cta-section .section-title { margin-bottom: 1rem; }
+  .cta-sub { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .cta-email { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.5rem); letter-spacing: 0.05em; color: var(--accent); text-decoration: none; display: inline-block; margin-top: 1.5rem; transition: all 0.3s; border-bottom: 2px solid transparent; }
+  .cta-email:hover { color: var(--accent-bright); border-bottom-color: var(--accent-bright); }
+  .cta-socials { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+  .cta-socials a { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .cta-socials a:hover { color: var(--accent); }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item { padding: 1.5rem 1rem; }
+    .timeline { padding-left: 2rem; }
+    .timeline-item::before { left: -2rem; }
+    .video-grid { grid-template-columns: 1fr; }
+    .hero-cta-row { flex-direction: column; align-items: center; }
+    .cta-section { padding: 5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">LN</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-number">11</div>
+  <div class="hero-label">Winger &#8212; Currently in Spain</div>
+  <h1>LIAM<span>NOYCE</span></h1>
+  <p class="hero-tagline">American winger currently contracted with CF Riba-Roja in Valencia, Spain &#8212; with international experience across Germany, Brazil, and Argentina.</p>
+  <div class="hero-cta-row">
+    <a href="https://www.youtube.com/watch?v=VhbZDVTNULU" class="btn-primary" target="_blank">&#9654;&ensp;Watch Highlights</a>
+    <a href="#contact" class="btn-ghost">Get in Touch</a>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number" id="age">20</div>
+    <div class="stat-label">Age</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">176cm</div>
+    <div class="stat-label">Height</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">Both</div>
+    <div class="stat-label">Footed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">&#127482;&#127480;</div>
+    <div class="stat-label">Nationality</div>
+  </div>
+</div>
+
+<section id="about" class="about">
+  <div class="reveal">
+    <div class="section-label">01 &#8212; About</div>
+    <h2 class="section-title">BUILT FOR THE<br>EUROPEAN GAME</h2>
+    <p class="about-text">
+      <strong>Liam Noyce</strong> is a versatile, attack-minded winger from Denver, Colorado, currently contracted with <strong>CF Riba-Roja in Valencia, Spain</strong>. His footballing education spans <strong>five countries</strong> &#8212; training and competing with academy sides in <strong>Germany and Austria</strong> through The TalentProjekt, at the prestigious <strong>MIC Cup in Barcelona</strong>, with <strong>S&#227;o Paulo FC</strong> in Brazil, and against <strong>Boca Juniors and River Plate</strong> in Argentina. He combines technical quality on the ball with tactical discipline, pace, and an understanding of the European style of play. Off the pitch, he brings discipline, professionalism, and the ability to communicate &#8212; fluent in <strong>English</strong>, conversational in <strong>Spanish</strong> and <strong>German</strong> (B1).
+    </p>
+    <div class="about-positions">
+      <div class="position-tag">Left Wing</div>
+      <div class="position-tag">Right Wing</div>
+      <div class="position-tag">Wing Back</div>
+    </div>
+    <div class="about-positions" style="margin-top: 0.8rem;">
+      <div class="position-tag">&#127468;&#127463; English &#8212; Fluent</div>
+      <div class="position-tag">&#127466;&#127480; Spanish &#8212; B1</div>
+      <div class="position-tag">&#127465;&#127466; German &#8212; B1</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="experience">
+  <div class="reveal">
+    <div class="section-label">02 &#8212; Experience</div>
+    <h2 class="section-title">CAREER TIMELINE</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Mar 2026 &#8212; Present</div>
+      <div class="timeline-title">CF RIBA-ROJA</div>
+      <div class="timeline-location"><span class="flag">&#127466;&#127480;</span> Valencia, Spain</div>
+      <div class="timeline-desc">Signed an amateur contract with the Valencia-based club, competing in the Spanish regional league system.</div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Jan 2024 &#8212; Mar 2026</div>
+      <div class="timeline-title">FUTEDU INTERNATIONAL ACADEMY</div>
+      <div class="timeline-location"><span class="flag">&#127466;&#127480;</span> Valencia, Spain</div>
+      <div class="timeline-desc">Trained and developed through FutEdu's high-performance programme in Valencia, combining elite football coaching with education under UEFA-licensed Spanish coaches. The pathway that connected Liam to competitive Spanish football.</div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Aug 2021 &#8212; Jan 2024</div>
+      <div class="timeline-title">THE TALENTPROJEKT</div>
+      <div class="timeline-location"><span class="flag">&#127465;&#127466;</span> Bad Aibling, Germany</div>
+      <div class="timeline-desc">American academy competing against German and Austrian clubs. Competed in the prestigious MIC Cup tournament in Barcelona, Spain. Versatile across all attacking and wing-back positions.</div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-date">May 2023 &#8212; Jul 2023</div>
+      <div class="timeline-title">REAL COLORADO FOXES USL2</div>
+      <div class="timeline-location"><span class="flag">&#127482;&#127480;</span> Denver, Colorado</div>
+      <div class="timeline-desc">Training alongside collegiate talent from across the United States at the USL League Two level.</div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Jul 2019</div>
+      <div class="timeline-title">S&#195;O PAULO FC TOURNAMENT</div>
+      <div class="timeline-location"><span class="flag">&#127463;&#127479;</span> Sorocaba, Brazil</div>
+      <div class="timeline-desc">Joined S&#227;o Paulo FC Sorocaba in a competitive intra-club tournament, fully immersed in Brazilian football culture.</div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Jul 2018</div>
+      <div class="timeline-title">COLORADO STORM DA</div>
+      <div class="timeline-location"><span class="flag">&#127462;&#127479;</span> Buenos Aires, Argentina</div>
+      <div class="timeline-desc">Competed against Boca Juniors, River Plate, and other top Argentine clubs as part of the Development Academy's international tour.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-section">
+  <div class="reveal">
+    <div class="section-label">Let's Talk</div>
+    <h2 class="section-title">READY FOR THE<br>NEXT LEVEL</h2>
+    <p class="cta-sub">Liam is currently playing in Spain and seeking opportunities to step up to a professional contract. Coaches, scouts, and agents &#8212; let's connect.</p>
+    <a href="https://www.youtube.com/watch?v=VhbZDVTNULU" class="btn-primary" target="_blank">&#9654;&ensp;Watch Film First</a>
+    <br>
+    <a href="mailto:hello@liamnoyce.com" class="cta-email">HELLO@LIAMNOYCE.COM</a>
+    <div class="cta-socials">
+      <a href="https://instagram.com/liam_noyce" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/watch?v=VhbZDVTNULU" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Liam Noyce &#8212; All Rights Reserved
+</footer>
+
+<script>
+  var birthDate = new Date(2005, 8, 1);
+  var today = new Date();
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) age--;
+  document.getElementById('age').textContent = age;
+
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(function(el) { observer.observe(el); });
+
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+  });
+</script>
+</body>
+</html>
