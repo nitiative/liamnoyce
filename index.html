@@ -160,6 +160,17 @@
   .stat-number { font-family: var(--font-display); font-size: 3rem; color: var(--accent); line-height: 1; }
   .stat-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.5rem; }
 
+  /* SEASON SNAPSHOT */
+  .season-summary { padding: 3rem; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(20,20,20,0.96), rgba(10,10,10,0.96)); }
+  .season-summary-inner { max-width: 1100px; margin: 0 auto; }
+  .season-summary-header { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; margin-bottom: 1.75rem; }
+  .season-summary-copy { max-width: 560px; color: var(--text-muted); line-height: 1.7; }
+  .season-summary-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--border); background: var(--bg-card); }
+  .season-summary-item { padding: 1.75rem 1.25rem; text-align: center; border-right: 1px solid var(--border); }
+  .season-summary-item:last-child { border-right: none; }
+  .season-summary-value { font-family: var(--font-display); font-size: clamp(2.3rem, 4vw, 3.25rem); color: var(--accent); line-height: 1; }
+  .season-summary-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.65rem; }
+
   /* SECTIONS */
   section { padding: 6rem 3rem; }
   .section-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
@@ -169,6 +180,7 @@
   .about { max-width: 900px; margin: 0 auto; }
   .about-text { font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); }
   .about-text strong { color: var(--text); font-weight: 600; }
+  .about-note { margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
   .about-positions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
   .position-tag { padding: 0.5rem 1.2rem; background: var(--accent-glow); border: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
 
@@ -229,6 +241,12 @@
     .timeline-item::before { left: -2rem; }
     .video-grid { grid-template-columns: 1fr; }
     .hero-cta-row { flex-direction: column; align-items: center; }
+    .season-summary { padding: 2rem 1.5rem; }
+    .season-summary-header { flex-direction: column; align-items: flex-start; margin-bottom: 1.25rem; }
+    .season-summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .season-summary-item:nth-child(2),
+    .season-summary-item:nth-child(4) { border-right: none; }
+    .season-summary-item:last-child { grid-column: 1 / -1; border-top: 1px solid var(--border); }
     .cta-section { padding: 5rem 1.5rem; }
   }
 </style>
@@ -279,6 +297,40 @@
   </div>
 </div>
 
+<section class="season-summary">
+  <div class="season-summary-inner reveal">
+    <div class="season-summary-header">
+      <div>
+        <div class="section-label">Season Snapshot</div>
+        <h2 class="section-title">15 APPEARANCES.<br>1000+ MINUTES.</h2>
+      </div>
+      <p class="season-summary-copy">Across the full season, Liam has recorded 15 appearances, 10 starts, 1 goal, 3 assists, and more than 1000 minutes played.</p>
+    </div>
+    <div class="season-summary-grid">
+      <div class="season-summary-item">
+        <div class="season-summary-value">15</div>
+        <div class="season-summary-label">Appearances</div>
+      </div>
+      <div class="season-summary-item">
+        <div class="season-summary-value">10</div>
+        <div class="season-summary-label">Starts</div>
+      </div>
+      <div class="season-summary-item">
+        <div class="season-summary-value">1</div>
+        <div class="season-summary-label">Goal</div>
+      </div>
+      <div class="season-summary-item">
+        <div class="season-summary-value">3</div>
+        <div class="season-summary-label">Assists</div>
+      </div>
+      <div class="season-summary-item">
+        <div class="season-summary-value">1000+</div>
+        <div class="season-summary-label">Minutes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="about">
   <div class="reveal">
     <div class="section-label">01 &#8212; About</div>
@@ -286,6 +338,7 @@
     <p class="about-text">
       <strong>Liam Noyce</strong> is a versatile, attack-minded winger from Denver, Colorado, currently contracted with <strong>CF Riba-Roja in Valencia, Spain</strong>. His footballing education spans <strong>five countries</strong> &#8212; developing through <strong>FutEdu International Academy</strong> in Valencia under UEFA-licensed Spanish coaches, training and competing with academy sides in <strong>Germany and Austria</strong> through The <strong>TalentProjekt</strong>, at the prestigious <strong>MIC Cup in Barcelona</strong>, with <strong>S&#227;o Paulo FC</strong> in Brazil, and against <strong>Boca Juniors and River Plate</strong> in Argentina. He combines technical quality on the ball with tactical discipline, pace, and an understanding of the European style of play. Off the pitch, he brings discipline, professionalism, and the ability to communicate &#8212; fluent in <strong>English</strong>, conversational in <strong>Spanish</strong> and <strong>German</strong>.
     </p>
+    <p class="about-note">Registered name: William Noyce</p>
     <div class="about-positions">
       <div class="position-tag">Left Wing</div>
       <div class="position-tag">Right Wing</div>
@@ -309,7 +362,7 @@
       <div class="timeline-date">Mar 2026 &#8212; Present</div>
       <div class="timeline-title">CF RIBA-ROJA</div>
       <div class="timeline-location"><span class="flag">&#127466;&#127480;</span> Valencia, Spain</div>
-      <div class="timeline-desc">Signed an amateur contract with the Valencia-based club, competing in the Spanish regional league system.</div>
+      <div class="timeline-desc">Since joining CF Riba-roja, Liam has made 3 appearances, including 1 start, in the Spanish regional league system.</div>
     </div>
     <div class="timeline-item reveal">
       <div class="timeline-date">Jan 2024 &#8212; Mar 2026</div>
@@ -347,16 +400,16 @@
 <section id="games" class="video-section">
   <div class="reveal">
     <div class="section-label">03 &#8212; Full Games</div>
-    <h2 class="section-title">MATCH FOOTAGE</h2>
+    <h2 class="section-title">SELECT MATCH FOOTAGE</h2>
     <div class="video-grid">
       <article class="video-card">
         <h3 class="video-card-title">UPV Futedu FC vs Riba-roja FC</h3>
-        <p class="video-card-copy">Full-match footage featuring Liam Noyce with UPV Futedu FC against Riba-roja FC, giving coaches and scouts a longer look at positioning, tempo, and work rate across the entire match.</p>
+        <p class="video-card-copy">Recorded full-match footage featuring Liam Noyce with UPV Futedu FC against Riba-roja FC, offering coaches and scouts a longer look at positioning, tempo, and work rate.</p>
         <a href="https://www.youtube.com/watch?v=I6dUJ1EG2q4" class="video-link" target="_blank" rel="noopener">&#9654;&ensp;Watch on YouTube</a>
       </article>
       <article class="video-card">
         <h3 class="video-card-title">UPV Futedu FC vs Paterna</h3>
-        <p class="video-card-copy">Additional full-game footage of Liam Noyce for UPV Futedu FC against Paterna, useful for evaluating off-ball movement, decision-making, and consistency beyond a highlights package.</p>
+        <p class="video-card-copy">Additional recorded full-game footage of Liam Noyce for UPV Futedu FC against Paterna, useful for evaluating off-ball movement, decision-making, and consistency beyond a highlights package.</p>
         <a href="https://www.youtube.com/watch?v=01FAHUg6228" class="video-link" target="_blank" rel="noopener">&#9654;&ensp;Watch on YouTube</a>
       </article>
     </div>
