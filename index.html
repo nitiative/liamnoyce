@@ -186,6 +186,13 @@
 
   /* VIDEO */
   .video-section { max-width: 1000px; margin: 0 auto; }
+  .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  .video-card { padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+  .video-card:hover { transform: translateY(-3px); border-color: rgba(200, 164, 78, 0.35); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25); }
+  .video-card-title { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .video-card-copy { color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem; }
+  .video-link { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .video-link:hover { color: var(--accent-bright); }
   .video-container { position: relative; width: 100%; padding-top: 56.25%; background: var(--bg-card); border: 1px solid var(--border); overflow: hidden; }
   .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
   .video-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.8rem; text-align: center; }
@@ -233,6 +240,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#games">Full Games</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -332,6 +340,25 @@
       <div class="timeline-title">COLORADO STORM DA</div>
       <div class="timeline-location"><span class="flag">&#127462;&#127479;</span> Buenos Aires, Argentina</div>
       <div class="timeline-desc">Competed against Boca Juniors, River Plate, and other top Argentine clubs as part of the Development Academy's international tour.</div>
+    </div>
+  </div>
+</section>
+
+<section id="games" class="video-section">
+  <div class="reveal">
+    <div class="section-label">03 &#8212; Full Games</div>
+    <h2 class="section-title">MATCH FOOTAGE</h2>
+    <div class="video-grid">
+      <article class="video-card">
+        <h3 class="video-card-title">UPV Futedu FC vs Riba-roja FC</h3>
+        <p class="video-card-copy">Full-match footage featuring Liam Noyce with UPV Futedu FC against Riba-roja FC, giving coaches and scouts a longer look at positioning, tempo, and work rate across the entire match.</p>
+        <a href="https://www.youtube.com/watch?v=I6dUJ1EG2q4" class="video-link" target="_blank" rel="noopener">&#9654;&ensp;Watch on YouTube</a>
+      </article>
+      <article class="video-card">
+        <h3 class="video-card-title">UPV Futedu FC vs Paterna</h3>
+        <p class="video-card-copy">Additional full-game footage of Liam Noyce for UPV Futedu FC against Paterna, useful for evaluating off-ball movement, decision-making, and consistency beyond a highlights package.</p>
+        <a href="https://www.youtube.com/watch?v=01FAHUg6228" class="video-link" target="_blank" rel="noopener">&#9654;&ensp;Watch on YouTube</a>
+      </article>
     </div>
   </div>
 </section>
