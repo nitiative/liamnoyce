@@ -166,6 +166,16 @@
   .season-summary-value { font-family: var(--font-display); font-size: clamp(2.3rem, 4vw, 3.25rem); color: var(--accent); line-height: 1; }
   .season-summary-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.65rem; }
 
+  .performance-summary { padding: 3rem; border-bottom: 1px solid var(--border); background: var(--bg); }
+  .performance-summary-inner { max-width: 1100px; margin: 0 auto; }
+  .performance-summary-header { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; margin-bottom: 1.75rem; }
+  .performance-summary-copy { max-width: 560px; color: var(--text-muted); line-height: 1.7; }
+  .performance-summary-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--border); background: var(--bg-card); }
+  .performance-summary-item { padding: 1.75rem 1.25rem; text-align: center; border-right: 1px solid var(--border); }
+  .performance-summary-item:last-child { border-right: none; }
+  .performance-summary-value { font-family: var(--font-display); font-size: clamp(2.1rem, 4vw, 3rem); color: var(--accent); line-height: 1; }
+  .performance-summary-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.65rem; }
+
   section { padding: 6rem 3rem; }
   .section-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
   .section-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 0.03em; margin-bottom: 2rem; }
@@ -232,6 +242,15 @@
     .season-summary-item:nth-child(2),
     .season-summary-item:nth-child(4) { border-right: none; }
     .season-summary-item:last-child { grid-column: 1 / -1; border-top: 1px solid var(--border); }
+    .performance-summary { padding: 2rem 1.5rem; }
+    .performance-summary-header { flex-direction: column; align-items: flex-start; margin-bottom: 1.25rem; }
+    .performance-summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .performance-summary-item:nth-child(2),
+    .performance-summary-item:nth-child(4) { border-right: none; }
+    .performance-summary-item:nth-child(3),
+    .performance-summary-item:nth-child(4),
+    .performance-summary-item:nth-child(5) { border-top: 1px solid var(--border); }
+    .performance-summary-item:last-child { grid-column: 1 / -1; }
     .cta-section { padding: 5rem 1.5rem; }
   }
 </style>
@@ -318,6 +337,40 @@
       <div class="season-summary-item">
         <div class="season-summary-value">1000+</div>
         <div class="season-summary-label">Minuten</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="performance-summary">
+  <div class="performance-summary-inner reveal">
+    <div class="performance-summary-header">
+      <div>
+        <div class="section-label">Leistungsprofil</div>
+        <h2 class="section-title">ERFASSTE SPIELDATEN</h2>
+      </div>
+      <p class="performance-summary-copy">GPS-Daten aus einem erfassten Spiel, damit Trainer und Scouts Liams Spielgeschwindigkeit, Laufleistung und wiederholte Sprintarbeit besser einordnen können.</p>
+    </div>
+    <div class="performance-summary-grid">
+      <div class="performance-summary-item">
+        <div class="performance-summary-value">58</div>
+        <div class="performance-summary-label">Minuten</div>
+      </div>
+      <div class="performance-summary-item">
+        <div class="performance-summary-value">30.9</div>
+        <div class="performance-summary-label">Top Speed km/h</div>
+      </div>
+      <div class="performance-summary-item">
+        <div class="performance-summary-value">6.1</div>
+        <div class="performance-summary-label">Laufdistanz pro Spiel km</div>
+      </div>
+      <div class="performance-summary-item">
+        <div class="performance-summary-value">1.19</div>
+        <div class="performance-summary-label">High-Speed km</div>
+      </div>
+      <div class="performance-summary-item">
+        <div class="performance-summary-value">34</div>
+        <div class="performance-summary-label">Sprints</div>
       </div>
     </div>
   </div>
