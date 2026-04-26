@@ -315,6 +315,13 @@
     animation: fadeUp 0.8s ease 0.9s forwards;
   }
 
+  .cv-download-group {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+  }
+
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -814,19 +821,26 @@
   }
 
   .print-cv-link {
-    display: inline-block;
-    margin-top: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--border);
+    background: rgba(200, 164, 78, 0.05);
     font-family: var(--font-mono);
     font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-muted);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s, border-color 0.3s, background 0.3s;
   }
 
   .print-cv-link:hover {
     color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-glow);
   }
 
   .cta-email {
@@ -910,6 +924,7 @@
     .video-grid { grid-template-columns: 1fr; }
     .hero-status { font-size: 0.58rem; letter-spacing: 0.12em; max-width: 300px; }
     .hero-cta-row { flex-direction: column; align-items: center; }
+    .cv-download-group { align-items: center; }
     .cta-actions { flex-direction: column; align-items: center; }
     .season-summary { padding: 2rem 1.5rem; }
     .season-summary-header { flex-direction: column; align-items: flex-start; margin-bottom: 1.25rem; }
@@ -957,10 +972,12 @@
   <div class="hero-status">Self-represented &middot; Available for training &amp; trials May 2026</div>
   <div class="hero-cta-row">
     <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Watch Highlights</a>
-    <a href="/liam-noyce-cv.pdf" class="btn-ghost" download>Download CV</a>
+    <div class="cv-download-group">
+      <a href="/liam-noyce-cv.pdf" class="btn-ghost" download>Download CV</a>
+      <a href="/liam-noyce-cv-print.pdf" class="print-cv-link" download>Print-friendly CV &#8595;</a>
+    </div>
     <a href="#contact" class="btn-ghost">Get in Touch</a>
   </div>
-  <a href="/liam-noyce-cv-print.pdf" class="print-cv-link" download>Print-friendly CV</a>
   <div class="scroll-indicator">
     <span>Scroll</span>
     <div class="scroll-line"></div>
@@ -1175,10 +1192,11 @@
     <p class="cta-sub">Liam is currently playing in Spain and seeking opportunities to step up to a professional contract. Coaches, scouts, and agents &#8212; let's connect.</p>
     <div class="cta-actions">
       <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Watch Film First</a>
-      <a href="/liam-noyce-cv.pdf" class="btn-ghost" download>Download CV</a>
+      <div class="cv-download-group">
+        <a href="/liam-noyce-cv.pdf" class="btn-ghost" download>Download CV</a>
+        <a href="/liam-noyce-cv-print.pdf" class="print-cv-link" download>Print-friendly CV &#8595;</a>
+      </div>
     </div>
-    <a href="/liam-noyce-cv-print.pdf" class="print-cv-link" download>Print-friendly CV</a>
-    <br>
     <a href="mailto:hello@liamnoyce.com" class="cta-email">HELLO@LIAMNOYCE.COM</a>
     <div class="cta-socials">
       <a href="https://instagram.com/liam_noyce" target="_blank" rel="noopener">Instagram</a>
