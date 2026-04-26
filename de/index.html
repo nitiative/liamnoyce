@@ -221,6 +221,7 @@
   .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, var(--accent-glow), transparent 70%); pointer-events: none; }
   .cta-section .section-title { margin-bottom: 1rem; }
   .cta-sub { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .cta-email { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.5rem); letter-spacing: 0.05em; color: var(--accent); text-decoration: none; display: inline-block; margin-top: 1.5rem; transition: all 0.3s; border-bottom: 2px solid transparent; }
   .cta-email:hover { color: var(--accent-bright); border-bottom-color: var(--accent-bright); }
   .cta-socials { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
@@ -247,6 +248,7 @@
     .video-grid { grid-template-columns: 1fr; }
     .hero-status { font-size: 0.58rem; letter-spacing: 0.12em; max-width: 300px; }
     .hero-cta-row { flex-direction: column; align-items: center; }
+    .cta-actions { flex-direction: column; align-items: center; }
     .season-summary { padding: 2rem 1.5rem; }
     .season-summary-header { flex-direction: column; align-items: flex-start; margin-bottom: 1.25rem; }
     .season-summary-grid { grid-template-columns: repeat(2, 1fr); }
@@ -293,6 +295,7 @@
   <div class="hero-status">Ohne Berater &middot; Verfügbar für Training und Probetrainings ab Mai 2026</div>
   <div class="hero-cta-row">
     <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Highlights ansehen</a>
+    <a href="/liam-noyce-cv.pdf" class="btn-ghost" download>CV herunterladen</a>
     <a href="#contact" class="btn-ghost">Kontakt aufnehmen</a>
   </div>
   <div class="scroll-indicator">
@@ -507,8 +510,10 @@
     <div class="section-label">Kontakt</div>
     <h2 class="section-title">BEREIT FÜR DEN<br>NÄCHSTEN SCHRITT</h2>
     <p class="cta-sub">Liam spielt aktuell in Spanien und sucht die nächste Möglichkeit, den Schritt in einen Profivertrag zu machen. Trainer, Scouts und Berater &#8212; lassen Sie uns sprechen.</p>
-    <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Zuerst Video ansehen</a>
-    <br>
+    <div class="cta-actions">
+      <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Zuerst Video ansehen</a>
+      <a href="/liam-noyce-cv.pdf" class="btn-ghost" download>CV herunterladen</a>
+    </div>
     <a href="mailto:hello@liamnoyce.com" class="cta-email">HELLO@LIAMNOYCE.COM</a>
     <div class="cta-socials">
       <a href="https://instagram.com/liam_noyce" target="_blank" rel="noopener">Instagram</a>

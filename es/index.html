@@ -805,6 +805,14 @@
     line-height: 1.7;
   }
 
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
   .cta-email {
     font-family: var(--font-display);
     font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -886,6 +894,7 @@
     .video-grid { grid-template-columns: 1fr; }
     .hero-status { font-size: 0.58rem; letter-spacing: 0.12em; max-width: 300px; }
     .hero-cta-row { flex-direction: column; align-items: center; }
+    .cta-actions { flex-direction: column; align-items: center; }
     .season-summary { padding: 2rem 1.5rem; }
     .season-summary-header { flex-direction: column; align-items: flex-start; margin-bottom: 1.25rem; }
     .season-summary-grid { grid-template-columns: repeat(2, 1fr); }
@@ -932,6 +941,7 @@
   <div class="hero-status">Sin representante &middot; Disponible para entrenamientos y pruebas en mayo de 2026</div>
   <div class="hero-cta-row">
     <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Ver highlights</a>
+    <a href="/liam-noyce-cv.pdf" class="btn-ghost" download>Descargar CV</a>
     <a href="#contact" class="btn-ghost">Contactar</a>
   </div>
   <div class="scroll-indicator">
@@ -1146,8 +1156,10 @@
     <div class="section-label">Hablemos</div>
     <h2 class="section-title">LISTO PARA EL<br>SIGUIENTE NIVEL</h2>
     <p class="cta-sub">Liam compite actualmente en Espa&#241;a y busca oportunidades para dar el salto a un contrato profesional. Entrenadores, scouts y agentes &#8212; hablemos.</p>
-    <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Ver video primero</a>
-    <br>
+    <div class="cta-actions">
+      <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Ver video primero</a>
+      <a href="/liam-noyce-cv.pdf" class="btn-ghost" download>Descargar CV</a>
+    </div>
     <a href="mailto:hello@liamnoyce.com" class="cta-email">HELLO@LIAMNOYCE.COM</a>
     <div class="cta-socials">
       <a href="https://instagram.com/liam_noyce" target="_blank" rel="noopener">Instagram</a>
