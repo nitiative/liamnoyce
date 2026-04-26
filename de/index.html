@@ -140,6 +140,7 @@
   .hero h1 { font-family: var(--font-display); font-size: clamp(4rem, 12vw, 10rem); letter-spacing: 0.04em; line-height: 0.9; color: var(--text); position: relative; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards; }
   .hero h1 span { display: block; background: linear-gradient(135deg, var(--accent), var(--accent-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .hero-tagline { font-size: 1.1rem; color: var(--text-muted); margin-top: 1.5rem; font-weight: 400; max-width: 560px; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards; }
+  .hero-status { margin-top: 1.2rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); line-height: 1.6; max-width: 560px; opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards; }
   .hero-cta-row { display: flex; gap: 1rem; margin-top: 2.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards; }
   .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2rem; background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s; }
   .btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
@@ -205,6 +206,14 @@
   .video-card:hover { transform: translateY(-3px); border-color: rgba(200, 164, 78, 0.35); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25); }
   .video-card-title { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
   .video-card-copy { color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem; }
+  .match-profile { margin: 1rem 0 1.15rem; border: 1px solid var(--border); background: rgba(10, 10, 10, 0.2); }
+  .match-profile-header { padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .match-profile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .match-profile-item { padding: 0.75rem 0.8rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .match-profile-item:nth-child(2n) { border-right: none; }
+  .match-profile-item:nth-last-child(-n+2) { border-bottom: none; }
+  .match-profile-value { font-family: var(--font-display); font-size: 1.35rem; line-height: 1; color: var(--accent); letter-spacing: 0.03em; }
+  .match-profile-label { margin-top: 0.35rem; font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
   .video-link { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
   .video-link:hover { color: var(--accent-bright); }
 
@@ -236,6 +245,7 @@
     .timeline { padding-left: 2rem; }
     .timeline-item::before { left: -2rem; }
     .video-grid { grid-template-columns: 1fr; }
+    .hero-status { font-size: 0.58rem; letter-spacing: 0.12em; max-width: 300px; }
     .hero-cta-row { flex-direction: column; align-items: center; }
     .season-summary { padding: 2rem 1.5rem; }
     .season-summary-header { flex-direction: column; align-items: flex-start; margin-bottom: 1.25rem; }
@@ -280,6 +290,7 @@
   <div class="hero-label">Flügelspieler &#8212; Aktuell in Spanien</div>
   <h1>LIAM<span>NOYCE</span></h1>
   <p class="hero-tagline">US-amerikanischer Flügelspieler, aktuell beim CF Riba-Roja in Valencia, Spanien, mit internationaler Erfahrung in Deutschland, Brasilien und Argentinien.</p>
+  <div class="hero-status">Ohne Berater &middot; Verfügbar für Training und Probetrainings ab Mai 2026</div>
   <div class="hero-cta-row">
     <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Highlights ansehen</a>
     <a href="#contact" class="btn-ghost">Kontakt aufnehmen</a>
@@ -304,8 +315,8 @@
     <div class="stat-label">Fuß</div>
   </div>
   <div class="stat-item">
-    <div class="stat-number">&#127482;&#127480;</div>
-    <div class="stat-label">Nationalität</div>
+    <div class="stat-number">US</div>
+    <div class="stat-label">Reisepass</div>
   </div>
 </div>
 
@@ -451,6 +462,35 @@
       <article class="video-card">
         <h3 class="video-card-title">UPV Futedu FC vs Riba-roja FC</h3>
         <p class="video-card-copy">Aufgezeichnetes vollständiges Spiel mit Liam Noyce für UPV Futedu FC gegen Riba-roja FC, das Trainern und Scouts einen längeren Blick auf Positionierung, Spieltempo und Arbeitsrate ermöglicht.</p>
+        <div class="match-profile" aria-label="Spielprofil UPV Futedu FC vs Riba-roja FC">
+          <div class="match-profile-header">Spielprofil &middot; 90 min</div>
+          <div class="match-profile-grid">
+            <div class="match-profile-item">
+              <div class="match-profile-value">9.99</div>
+              <div class="match-profile-label">Distanz km</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">105.8</div>
+              <div class="match-profile-label">Meter / min</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">10</div>
+              <div class="match-profile-label">Sprints</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">57</div>
+              <div class="match-profile-label">Antritte</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">0.40</div>
+              <div class="match-profile-label">HSR km</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">28.6</div>
+              <div class="match-profile-label">Max km/h</div>
+            </div>
+          </div>
+        </div>
         <a href="https://www.youtube.com/watch?v=I6dUJ1EG2q4" class="video-link" target="_blank" rel="noopener">&#9654;&ensp;Auf YouTube ansehen</a>
       </article>
       <article class="video-card">

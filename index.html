@@ -294,6 +294,19 @@
     animation: fadeUp 0.8s ease 0.7s forwards;
   }
 
+  .hero-status {
+    margin-top: 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1.6;
+    max-width: 560px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
   .hero-cta-row {
     display: flex;
     gap: 1rem;
@@ -705,6 +718,53 @@
     margin-bottom: 1.25rem;
   }
 
+  .match-profile {
+    margin: 1rem 0 1.15rem;
+    border: 1px solid var(--border);
+    background: rgba(10, 10, 10, 0.2);
+  }
+
+  .match-profile-header {
+    padding: 0.65rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .match-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .match-profile-item {
+    padding: 0.75rem 0.8rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .match-profile-item:nth-child(2n) { border-right: none; }
+  .match-profile-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .match-profile-value {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+  }
+
+  .match-profile-label {
+    margin-top: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
   .video-link {
     display: inline-flex;
     align-items: center;
@@ -824,6 +884,7 @@
     .timeline { padding-left: 2rem; }
     .timeline-item::before { left: -2rem; }
     .video-grid { grid-template-columns: 1fr; }
+    .hero-status { font-size: 0.58rem; letter-spacing: 0.12em; max-width: 300px; }
     .hero-cta-row { flex-direction: column; align-items: center; }
     .season-summary { padding: 2rem 1.5rem; }
     .season-summary-header { flex-direction: column; align-items: flex-start; margin-bottom: 1.25rem; }
@@ -868,6 +929,7 @@
   <div class="hero-label">Winger &#8212; Currently in Spain</div>
   <h1>LIAM<span>NOYCE</span></h1>
   <p class="hero-tagline">American winger currently contracted with CF Riba-Roja in Valencia, Spain &#8212; with international experience across Germany, Brazil, and Argentina.</p>
+  <div class="hero-status">Self-represented &middot; Available for training &amp; trials May 2026</div>
   <div class="hero-cta-row">
     <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Watch Highlights</a>
     <a href="#contact" class="btn-ghost">Get in Touch</a>
@@ -892,8 +954,8 @@
     <div class="stat-label">Footed</div>
   </div>
   <div class="stat-item">
-    <div class="stat-number">&#127482;&#127480;</div>
-    <div class="stat-label">Nationality</div>
+    <div class="stat-number">US</div>
+    <div class="stat-label">Passport</div>
   </div>
 </div>
 
@@ -1039,6 +1101,35 @@
       <article class="video-card">
         <h3 class="video-card-title">UPV Futedu FC vs Riba-roja FC</h3>
         <p class="video-card-copy">Recorded full-match footage featuring Liam Noyce with UPV Futedu FC against Riba-roja FC, offering coaches and scouts a longer look at positioning, tempo, and work rate.</p>
+        <div class="match-profile" aria-label="Match profile for UPV Futedu FC vs Riba-roja FC">
+          <div class="match-profile-header">Match Profile &middot; 90 min</div>
+          <div class="match-profile-grid">
+            <div class="match-profile-item">
+              <div class="match-profile-value">9.99</div>
+              <div class="match-profile-label">Distance km</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">105.8</div>
+              <div class="match-profile-label">Meters / min</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">10</div>
+              <div class="match-profile-label">Sprints</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">57</div>
+              <div class="match-profile-label">Accels</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">0.40</div>
+              <div class="match-profile-label">HSR km</div>
+            </div>
+            <div class="match-profile-item">
+              <div class="match-profile-value">28.6</div>
+              <div class="match-profile-label">Max km/h</div>
+            </div>
+          </div>
+        </div>
         <a href="https://www.youtube.com/watch?v=I6dUJ1EG2q4" class="video-link" target="_blank" rel="noopener">&#9654;&ensp;Watch on YouTube</a>
       </article>
       <article class="video-card">
