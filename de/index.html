@@ -207,6 +207,18 @@
   .video-card:hover { transform: translateY(-3px); border-color: rgba(200, 164, 78, 0.35); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25); }
   .video-card-title { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
   .video-card-copy { color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem; }
+  .video-card-note {
+    margin: 1rem 0 1.15rem;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--border);
+    background: rgba(10, 10, 10, 0.2);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
   .match-profile { margin: 1rem 0 1.15rem; border: 1px solid var(--border); background: rgba(10, 10, 10, 0.2); }
   .match-profile-header { padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
   .match-profile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -295,13 +307,13 @@
   <div class="hero-number">11</div>
   <div class="hero-label">Flügelspieler &#8212; Aktuell in Spanien</div>
   <h1>LIAM<span>NOYCE</span></h1>
-  <p class="hero-tagline">US-amerikanischer Flügelspieler, aktuell beim CF Riba-Roja in Valencia, Spanien, mit internationaler Erfahrung in Spanien, Deutschland, Brasilien und Argentinien.</p>
-  <div class="hero-status">Ohne Berater &middot; Visum selbst organisiert &middot; Verfügbar für Training und Probetrainings ab Mai 2026</div>
+  <p class="hero-tagline">US-amerikanischer Wing Back, aktuell vereinslos, mit internationaler Erfahrung in Spanien, Deutschland, Brasilien und Argentinien.</p>
+  <div class="hero-status">Ohne Berater &middot; Visum selbst organisiert &middot; Verfügbar für Training und Probetrainings</div>
   <div class="hero-cta-row">
     <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Highlights ansehen</a>
     <div class="cv-download-group">
-      <a href="/de/liam-noyce-cv.pdf" class="btn-ghost" download>CV herunterladen</a>
-      <a href="/de/liam-noyce-cv-print.pdf" class="print-cv-link" download>Druckfreundlicher CV &#8595;</a>
+      <a href="/de/cv.html" class="btn-ghost" target="_blank" rel="noopener">CV ansehen</a>
+      <a href="/de/cv-print.html" class="print-cv-link" target="_blank" rel="noopener">Druckfreundlicher CV &#8599;</a>
     </div>
     <a href="#contact" class="btn-ghost">Kontakt aufnehmen</a>
   </div>
@@ -337,7 +349,7 @@
         <div class="section-label">Saisonsnapshot</div>
         <h2 class="section-title">15 SPIELE.<br>1000+ MINUTEN.</h2>
       </div>
-      <p class="season-summary-copy">Ein gelernter Fl&#252;gelspieler, der in der Saison 2025&#8211;2026 bei FutEdu durchgehend als Wing Back eingesetzt wurde. Die Bilanz spiegelt die defensiven Aufgaben in einem System mit F&#252;nferkette wider.</p>
+      <p class="season-summary-copy">In der Saison 2025&#8211;2026 bei FutEdu durchgehend als Wing Back eingesetzt. Die Bilanz spiegelt die defensiven Aufgaben in einem System mit F&#252;nferkette wider.</p>
     </div>
     <div class="season-summary-grid">
       <div class="season-summary-item">
@@ -409,13 +421,14 @@
     <div class="section-label">01 &#8212; Profil</div>
     <h2 class="section-title">GEBAUT FÜR DEN<br>EUROPÄISCHEN FUSSBALL</h2>
     <p class="about-text">
-      <strong>Liam Noyce</strong> ist ein vielseitiger, offensiv ausgerichteter Flügelspieler aus Denver, Colorado, und steht aktuell beim <strong>CF Riba-Roja in Valencia, Spanien</strong> unter Vertrag. Seine fußballerische Ausbildung führte ihn durch <strong>fünf Länder</strong> &#8212; mit Entwicklung bei der <strong>FutEdu International Academy</strong> in Valencia unter UEFA-lizenzierten spanischen Trainern, Training und Wettbewerb mit Akademiemannschaften in <strong>Deutschland und Österreich</strong> über <strong>The TalentProjekt</strong>, beim renommierten <strong>MIC Cup in Barcelona</strong>, mit <strong>São Paulo FC</strong> in Brasilien sowie gegen <strong>Boca Juniors und River Plate</strong> in Argentinien. In dieser Saison vorwiegend als Wing Back eingesetzt, überträgt er seine Flügelspieler-Instinkte auf eine defensive Rolle und baut ein Zwei-Wege-Profil auf &#8212; verbunden mit technischer Qualität am Ball, taktischer Disziplin, Tempo und einem klaren Verständnis für den europäischen Spielstil. Abseits des Platzes bringt er Disziplin, Professionalität und Kommunikationsstärke mit &#8212; fließend in <strong>Englisch</strong>, konversationssicher in <strong>Spanisch</strong> und <strong>Deutsch</strong>.
+      <strong>Liam Noyce</strong> ist ein vielseitiger Wing Back aus Denver, Colorado, und stand zuvor beim <strong>CF Riba-Roja in Valencia, Spanien</strong> unter Vertrag. Seine fußballerische Ausbildung führte ihn durch <strong>fünf Länder</strong> &#8212; mit Entwicklung bei der <strong>FutEdu International Academy</strong> in Valencia unter UEFA-lizenzierten spanischen Trainern, Training und Wettbewerb mit Akademiemannschaften in <strong>Deutschland und Österreich</strong> über <strong>The TalentProjekt</strong>, beim renommierten <strong>MIC Cup in Barcelona</strong>, mit <strong>São Paulo FC</strong> in Brasilien sowie gegen <strong>Boca Juniors und River Plate</strong> in Argentinien. In dieser Saison vorwiegend als Wing Back eingesetzt, überträgt er seine Flügelspieler-Instinkte auf eine defensive Rolle und baut ein Zwei-Wege-Profil auf &#8212; verbunden mit technischer Qualität am Ball, taktischer Disziplin, Tempo und einem klaren Verständnis für den europäischen Spielstil. Abseits des Platzes bringt er Disziplin, Professionalität und Kommunikationsstärke mit &#8212; fließend in <strong>Englisch</strong>, konversationssicher in <strong>Spanisch</strong> und <strong>Deutsch</strong>.
     </p>
     <p class="about-note">Registrierter Name: William Noyce</p>
     <div class="about-positions">
+      <div class="position-tag">Wing Back</div>
+      <div class="position-tag">Linksverteidiger</div>
       <div class="position-tag">Linker Flügel</div>
       <div class="position-tag">Rechter Flügel</div>
-      <div class="position-tag">Wing Back</div>
     </div>
     <div class="about-positions" style="margin-top: 0.8rem;">
       <div class="position-tag">&#127468;&#127463; Englisch &#8212; Fließend</div>
@@ -432,7 +445,13 @@
   </div>
   <div class="timeline">
     <div class="timeline-item reveal">
-      <div class="timeline-date">Mär 2026 &#8212; Heute</div>
+      <div class="timeline-date">Jun 2026 &#8212; Aug 2026</div>
+      <div class="timeline-title">ATLETICO UNION</div>
+      <div class="timeline-location"><span class="flag">&#127482;&#127480;</span> Colorado, USA</div>
+      <div class="timeline-desc">Kam als Walk-on zum MPL-Team, wo er Stammspieler und Kapitän wurde. Drei Wochen nach seinem Wechsel wurde er in das USL2-Programm aufgenommen.</div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Mär 2026 &#8212; Jun 2026</div>
       <div class="timeline-title">CF RIBA-ROJA</div>
       <div class="timeline-location"><span class="flag">&#127466;&#127480;</span> Valencia, Spanien</div>
       <div class="timeline-desc">Seit seinem Wechsel zu CF Riba-roja kommt Liam auf 3 Spiele, darunter 1 Start, im regionalen spanischen Ligasystem.</div>
@@ -469,6 +488,12 @@
     <div class="section-label">03 &#8212; Komplette Spiele</div>
     <h2 class="section-title">SPIELMATERIAL</h2>
     <div class="video-grid">
+      <article class="video-card">
+        <h3 class="video-card-title">MPL: Atletico Union vs AFC Dragons</h3>
+        <p class="video-card-copy">Vollständiges Spiel von Liam Noyce mit Atletico Union gegen AFC Dragons in der MPL, seiner ersten US-Wettbewerbsebene nach der Rückkehr aus Spanien.</p>
+        <div class="video-card-note">Hinweis &#8212; das Spiel beginnt bei Minute 37. Liam ist der Linksverteidiger mit der Nummer 23</div>
+        <a href="https://www.youtube.com/watch?v=tOp-u1Uke0A" class="video-link" target="_blank" rel="noopener">&#9654;&ensp;Auf YouTube ansehen</a>
+      </article>
       <article class="video-card">
         <h3 class="video-card-title">UPV Futedu FC vs Riba-roja FC</h3>
         <p class="video-card-copy">Aufgezeichnetes vollständiges Spiel mit Liam Noyce für UPV Futedu FC gegen Riba-roja FC, das Trainern und Scouts einen längeren Blick auf Positionierung, Spieltempo und Arbeitsrate ermöglicht.</p>
@@ -516,12 +541,12 @@
   <div class="reveal">
     <div class="section-label">Kontakt</div>
     <h2 class="section-title">BEREIT FÜR DEN<br>NÄCHSTEN SCHRITT</h2>
-    <p class="cta-sub">Liam spielt aktuell in Spanien und sucht die nächste Möglichkeit, den Schritt in einen Profivertrag zu machen. Trainer, Scouts und Berater &#8212; lassen Sie uns sprechen.</p>
+    <p class="cta-sub">Liam spielt aktuell zu Trainingszwecken bei regionalen und halbprofessionellen Teams und sucht die Möglichkeit, den Schritt in einen Profivertrag zu machen. Trainer, Scouts und Berater &#8212; lassen Sie uns sprechen.</p>
     <div class="cta-actions">
       <a href="https://youtu.be/PQqEhc5QcW4" class="btn-primary" target="_blank" rel="noopener">&#9654;&ensp;Zuerst Video ansehen</a>
       <div class="cv-download-group">
-        <a href="/de/liam-noyce-cv.pdf" class="btn-ghost" download>CV herunterladen</a>
-        <a href="/de/liam-noyce-cv-print.pdf" class="print-cv-link" download>Druckfreundlicher CV &#8595;</a>
+        <a href="/de/cv.html" class="btn-ghost" target="_blank" rel="noopener">CV ansehen</a>
+        <a href="/de/cv-print.html" class="print-cv-link" target="_blank" rel="noopener">Druckfreundlicher CV &#8599;</a>
       </div>
     </div>
     <a href="mailto:hello@liamnoyce.com" class="cta-email">HELLO@LIAMNOYCE.COM</a>
